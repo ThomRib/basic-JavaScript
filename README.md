@@ -210,7 +210,156 @@ Hasil dari operator logika adalah boolean lagi
 ## Operator Unary !
 <img width="951" height="167" alt="image" src="https://github.com/user-attachments/assets/258c9348-937b-44fe-8207-fb6c72757055" />
 
+---
 
+# Console
+JavaScript memiliki fitur untuk melakukan logging bernama Console</br>
+Logging adalah mekanisme yang biasa dilakukan oleh programmer untuk menampilkan informasi dari aplikasi yang sedang berjalan, tanpa harus mengganggu alur kerja aplikasi dan juga interaksi user</br>
+Untuk melakukan ini, kita bisa menggunakan fitur Console di JavaScript</br>
+Untuk menggunakan Console, kita cukup gunakan perintah console di kode JavaScript
+<img width="963" height="272" alt="image" src="https://github.com/user-attachments/assets/e57b4f69-d44f-40a5-9f4e-eab84f98cbda" />
+```js
+	console.log("halo");
+```
+
+---
+
+# String Template
+Kita sudah tahu bahwa untuk menambahkan string dengan data lain, kita bisa mengguankan operator + (plus)</br>
+Namun pada kasus tertentu, penggunaan operator + (plus) sangat menyulitkan, apalagi jika dalam jumlah banyak</br>
+JavaScript memiliki fitur yang bernama String Template, dimana kita bisa mensubtitusi data dari luar String ke dalam String, seperti mengambil data variable, atau bahkan melakukan operasi matematika</br>
+Untuk menggunakan String Template, cara pembuatan String nya harus menggunakan `(backtick), bukan '(petik satu) atau "(petik dua)
+```js
+	const template = `Name : `;
+```
+
+---
+
+# Mengambil Variable
+```js
+	const name = "his name";
+	const template = `Name : ${name}`;
+	
+	console.info(template);
+```
+
+---
+
+# Expression di String Template
+```js
+	const name = "his name";
+	const value = 80;
+	const template = `Name : ${name}, Lulus : ${value > 75}`;
+	
+	console.info(template);
+```
+
+---
+
+# Multiline String 
+Stirng template juga bisa digunakan untuk membuat string multi line</br>
+Kita cukup tambahkan enter di text nya
+```js
+	let multiLineString = `
+	his
+	name
+	`;
+	
+	document.writeln("<pre>");
+	document.writeln(multiLineString);
+	document.writeln("</pre>");
+```
+
+---
+
+# Konversi String dan Number
+Saat membuat aplikasi, kadang kita input dari pengguna selalu dalam bentuk String</br>
+Sedangkan kita ingin mengelola datanya dalam bentuk Number</br>
+Maka sangat disarankan untuk melakukan konversi tipe data
+<img width="965" height="359" alt="image" src="https://github.com/user-attachments/assets/b55857ed-155d-4eb4-8706-9a1410f2a8f1" />
+
+## Masalah Tanpa Konversi
+```js
+	const value1 = "1";
+	const value2 = 1;
+	const sum = value1 + value2;
+	
+	document.writeln(`<p>${sum}</p>`)
+```
+## Konversi String ke Number
+```js
+	document.writeln(`<p>${parseInt("1.1")}</p>`); // 1
+	document.writeln(`<p>${parseFloat("1.1")}</p>`); // 1.1
+	document.writeln(`<p>${Number("1.1")}</p>`); // 1.1
+```
+## NaN
+Bagaimana jika ternyata jika ternyata data string yang kita coba konversi ke number bukanlah data yang valid?</br>
+Jika data string yang kita coba lakukan konversi bukan lah data valid, maka hasil dari konversi tersebut adalah NaN (Not a Number)</br>
+NaN adalah number spesial yang menyebutkan bahwa ini bukanlah number</br>
+Jika NaN dioperawsikan dengan data number lainnya, maka hasilnya akan menjadi NaN lagi</br>
+```js
+	document.writeln(`<p>${parseInt("salah")}</p>`); // NaN
+	document.writeln(`<p>${parseFloat("1.1text")}</p>`); // 1.1
+	
+	// Bumber() tidak akan mentolelir kesalah pada data
+	document.writeln(`<p>${Number("1.1ups")}</p>`); // NaN
+	document.writeln(`<p>${Number("1x")}</p>`); // NaN
+	document.writeln(`<p>${Number("bukan number")}</p>`); // NaN
+```
+## Operasi pada NaN
+```js
+	const value1 = Number("salah"); // NaN
+	const value2 = 100;
+	const sum = value1 + value2; // NaN
+	
+	document.writeln(`<p>${sum}</p>`);
+```
+## isNaN() Function
+Kadang kita ingin mengecek apakah sebuah number itu NaN atau bukan</br>
+Untuk melakukan pengecekan tersebut, kita bisa mengguankan function isNaN(number)</br>
+Hasil nya adalah berupa data boolean, true jika NaN, false jika bukan
+
+---
+
+# Tipe Data Array
+Array adalah tipe data yang berisikan kumpulan data</br>
+Array di JavaScript memiliki sifat dinamis, artinya datanya bisa bertambah dengan sendirinya saat kita memasukan data ke dalam Array
+## Membuat Array
+```js
+	let arrayKosong = [];
+	let arrayNama = ["his", "name"];
+```
+## Cara Kerja Array
+Setiap data di Array akan disimpan dalam posisi berurutan, dimana ururtan pertama dimulai dari nomer 0 </br>
+Setiap kita menambah data ke Array, otomatis data akan disimpan di urutan terakhir</br>
+Urutan di Array, kita sebut dengan index
+## Menambah Array
+```js
+	const name = [];
+	names.push("his");
+	names.push("name","thomas");
+	
+	console.table(names);
+```
+## Operasi di Array
+```js
+	const name = [];
+	names.push("his");
+	names.push("name","thomas");
+	
+	console.table(names);
+	
+	names[0] = "alex";
+	
+	console.table(names);
+	console.info(names.length)
+```
+<img width="962" height="347" alt="image" src="https://github.com/user-attachments/assets/75ecef29-710e-4012-9e9b-96f7ac8e55ab" />
+
+## Perlu Diingat!!!
+Data di dalam Array tidak ada batasnya harus data apa</br>
+Jadi kita bisa memasukkan data apapun ke dalam Array</br>
+Bahkan kita juga bisa memasukkan Array ke dalam Array jika kita mau
 
 ---
 
